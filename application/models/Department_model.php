@@ -11,6 +11,13 @@
 	public function get_departments() {
 	  return $this->db->get("xin_departments");
 	}
+
+	
+	public function get_department() {
+		$query = $this->db->get("xin_departments");
+		return $query->result();
+	}
+
 	public function get_sub_departments() {
 	  return $this->db->get("xin_sub_departments");
 	}
