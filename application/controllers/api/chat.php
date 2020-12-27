@@ -106,9 +106,9 @@ class chat extends REST_controller{
 
     public function index_delete(){
         $data = json_decode(file_get_contents("php://input"));
-        $message_id = $this->security->xss_clean($data->message_id);
+        $id = $this->security->xss_clean($data->message_id);
 
-        if($this->Chat_model->delete_chat($message_id)){
+        if($this->Chat_model->delete_chat($id)){
             $this->response(array(
                 "status" => 1,
                 "message" => "chat deleted"
@@ -127,8 +127,8 @@ class chat extends REST_controller{
 
         $data = json_decode(file_get_contents("php://input"));
         
-        if(isset($data->message_id) && isset($data->from_id) && isset($data->to_id) && isset($data->message_from) && isset($data->message_content) && isset($data->message_type) && isset($data->department_id) && isset($data->location_id)){
-            $message_id = $data->$message_id;
+        if(isset($data->message_id) || isset($data->from_id) || isset($data->to_id) || isset($data->message_from) || isset($data->message_content) && isset($data->message_type) || isset($data->department_id) || isset($data->location_id)){
+            $message_id = $data->message_id;
             
             $update_chat = array(
                 "from_id"=>$data->from_id,
@@ -163,3 +163,5 @@ class chat extends REST_controller{
     }
 
 }
+
+?>

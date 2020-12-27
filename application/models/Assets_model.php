@@ -16,6 +16,13 @@
 	public function get_assets() {
 	  return $this->db->get("xin_assets");
 	}
+
+	// all assets (api)
+	public function get_asset() {
+		$query = $this->db->query("SELECT * FROM xin_assets");
+		return $query->result();
+
+	}
 	
 	public function get_employee_assets($id) {
 		
