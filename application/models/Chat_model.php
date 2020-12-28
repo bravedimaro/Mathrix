@@ -4,7 +4,14 @@ class Chat_model extends CI_Model {
      {
           // Call the Model constructor
           parent::__construct();
-     }
+	 }
+	 
+	 // get all messages(api)
+	public function get_message() {
+		$query = $this->db->query("SELECT * FROM xin_chat_messages");
+		return $query->result();
+	}
+	
 	// get all messages
 	public function get_messages() {
 		$query = $this->db->query("SELECT * FROM xin_chat_messages where department_id ='0' and location_id = '0' ORDER BY message_id asc");
@@ -149,6 +156,19 @@ class Chat_model extends CI_Model {
 		$query = $this->db->query($sql, $binds);
 		
 		return $query->result();
+	}
+
+	// function to delete chat(api)
+	public function delete_chat($message_id){
+		$this->db->where("message_id", "$message_id");
+		return $this->db->delete("xin_chat_messages");
+
+	}
+
+	// function to update chat(api)
+	public function update_chat($message_id, $update_chat){
+		$this->db->where("message_id", "$message_id");
+		return $this->db->update("xin_chat_messages", "$update_chat");
 	}
 
 }

@@ -10,7 +10,8 @@
     }
  
 	public function get_companies() {
-	  return $this->db->get("xin_companies");
+	  $query = $this->db->get("xin_companies");
+	  return $query->result();
 	}
 	
 	public function get_company_documents() {

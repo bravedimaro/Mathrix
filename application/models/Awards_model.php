@@ -14,6 +14,14 @@ class awards_model extends CI_Model {
 	  return $this->db->get("xin_awards");
 	}
 	 
+	
+	public function get_award(){
+	$query = $this->db->query("SELECT * FROM xin_awards");
+	return $query->result();
+
+	}
+	 
+
 	 public function read_award_type_information($id) {
 	
 		$sql = 'SELECT * FROM xin_award_type WHERE award_type_id = ?';
