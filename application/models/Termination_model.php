@@ -61,7 +61,10 @@ class Termination_model extends CI_Model {
   	  return $query->result();
 	}
 	
-	
+	public function get_termination(){
+		$query = $this->db->query("SELECT * from xin_employee_terminations LEFT JOIN xin_termination_type ON xin_termination_type.termination_type_id = xin_employee_terminations.termination_type_id");
+  	  	return $query->result();
+	}
 	// Function to add record in table
 	public function add($data){
 		$this->db->insert('xin_employee_terminations', $data);

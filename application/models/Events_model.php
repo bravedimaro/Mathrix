@@ -14,6 +14,12 @@ class Events_model extends CI_Model {
 	  return $this->db->get("xin_events");
 	}
 	 
+	
+	public function get_event(){
+	  $query = $this->db->query("SELECT * FROM xin_events");
+	  return $query->result();
+	}
+	 
 	 public function read_event_information($id) {
 	
 		$sql = 'SELECT * FROM xin_events WHERE event_id = ?';

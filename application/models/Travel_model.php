@@ -48,6 +48,12 @@ class Travel_model extends CI_Model {
 	  $query = $this->db->query("SELECT * from xin_travel_arrangement_type");
   	  return $query->result();
 	}
+
+	// get all records api
+	public function get_travels(){
+		$query = $this->db->query("SELECT * FROM xin_employee_travels LEFT JOIN xin_travel_arrangement_type ON xin_travel_arrangement_type.arrangement_type_id = xin_employee_travels.arrangement_type");
+		return $query->result();
+	}
 	
 	// Function to add record in table
 	public function add($data){

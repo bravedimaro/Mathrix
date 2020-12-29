@@ -13,6 +13,12 @@ class employee_exit_model extends CI_Model {
 	{
 	  return $this->db->get("xin_employee_exit");
 	}
+
+	// api
+	public function all_exit() {
+		$query = $this->db->query("SELECT * from xin_employee_exit");
+		  return $query->result();
+	  }
 	 
 	 public function read_exit_information($id) {
 	

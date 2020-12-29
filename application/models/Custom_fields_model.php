@@ -11,7 +11,11 @@ class Custom_fields_model extends CI_Model {
 	public function get_hrsale_module_attributes() {
 		return $this->db->get("xin_hrsale_module_attributes");
 	}
-	 
+	
+	public function get_hrsale_module_attribute() {
+		$query = $this->db->query("SELECT * FROM xin_hrsale_module_attributes");
+		return $query->result();
+	}
 	 public function read_hrsale_module_attributes($id) {
 	
 		$sql = 'SELECT * FROM xin_hrsale_module_attributes WHERE custom_field_id = ?';

@@ -12,7 +12,12 @@ class designation_model extends CI_Model {
 	{
 	  return $this->db->get("xin_designations");
 	}
+	public function get_designation(){
+	  $query = $this->db->query("SELECT * FROM xin_designations");
+	  return $query->result();
+	}
 	 
+
 	 public function read_designation_information($id) {
 	
 		$sql = 'SELECT * FROM xin_designations WHERE designation_id = ?';

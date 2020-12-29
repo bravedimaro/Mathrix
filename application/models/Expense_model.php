@@ -13,6 +13,11 @@
 	public function get_expenses() {
 	  return $this->db->get("xin_expenses");
 	}
+
+	public function get_expense() {
+		$query = $this->db->query("SELECT * FROM xin_expenses");
+		return $query->result();
+	}
 	
 	// get employee claim expense
 	public function get_employee_expenses() {

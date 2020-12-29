@@ -1734,7 +1734,7 @@ CREATE TABLE `xin_hrsale_invoices_items` (
 --
 -- Table structure for table `xin_hrsale_module_attributes`
 --
-
+ 
 CREATE TABLE `xin_hrsale_module_attributes` (
   `custom_field_id` int(11) NOT NULL,
   `module_id` int(11) NOT NULL,

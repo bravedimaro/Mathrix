@@ -13,6 +13,11 @@ class Files_model extends CI_Model {
 	{
 	  return $this->db->get("xin_file_manager");
 	}
+
+	public function get_file(){
+	  $query = $this->db->query("SELECT * FROM xin_file_manager");
+	  return $query->result();
+	}
 	 
 	 public function read_file_information($id) {
 	

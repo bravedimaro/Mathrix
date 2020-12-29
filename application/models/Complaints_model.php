@@ -13,6 +13,14 @@ class complaints_model extends CI_Model {
 	{
 	  return $this->db->get("xin_employee_complaints");
 	}
+
+	// get all messages(api)
+	public function get_complains(){
+		$query = $this->db->query("SELECT * FROM xin_employee_complaints");
+		return $query->result();
+
+	}
+
 	 
 	 public function read_complaint_information($id) {
 	
