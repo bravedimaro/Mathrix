@@ -41,6 +41,11 @@ class Meetings_model extends CI_Model {
 	 	return $query;
 	}
 	
+	public function get_meeting(){
+		$query = $this->db->query("SELECT * FROM xin_meetings");
+		return $query->result();
+	}
+	
 	// Function to add record in table
 	public function add($data){
 		$this->db->insert('xin_meetings', $data);

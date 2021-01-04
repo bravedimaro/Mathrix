@@ -14,6 +14,11 @@
 	  return $this->db->get("xin_languages");
 	}
 	 
+	public function get_language(){
+	  $query = $this->db->query("SELECT * FROM xin_languages");
+	  return $query->result();
+	}
+
 	 public function read_language_information($id) {
 	
 		$sql = 'SELECT * FROM xin_languages WHERE language_id = ?';

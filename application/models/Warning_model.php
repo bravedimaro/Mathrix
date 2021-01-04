@@ -60,6 +60,11 @@ class warning_model extends CI_Model {
   	  return $query->result();
 	}
 	
+	// get all warnings(api)
+	public function all_warning() {
+		$query = $this->db->query("SELECT * from xin_employee_warnings LEFT JOIN xin_warning_type ON xin_warning_type.warning_type_id=xin_employee_warnings.warning_type_id");
+		  return $query->result();
+	  }
 	
 	// Function to add record in table
 	public function add($data){
