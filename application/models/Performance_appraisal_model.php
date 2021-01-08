@@ -12,7 +12,13 @@ class Performance_appraisal_model extends CI_Model {
 	public function get_performance_appraisal() {
 	  return $this->db->get("xin_performance_appraisal");
 	}
-	
+
+	public function get_performance_appraisals() {
+		$query = $this->db->query("SELECT * FROM xin_performance_appraisal");
+		return $query->result();
+
+	}
+	  
 	public function get_employee_performance_appraisal($id) {
 	 	
 		$sql = 'SELECT * FROM xin_performance_appraisal WHERE employee_id = ?';

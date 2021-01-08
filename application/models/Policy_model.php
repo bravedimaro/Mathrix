@@ -13,6 +13,11 @@ class policy_model extends CI_Model {
 	{
 	  return $this->db->get("xin_company_policy");
 	}
+
+	public function get_policies(){
+	  return $this->db->get("xin_company_policy");
+	}
+	 
 	 
 	 public function read_policy_information($id) {
 	
